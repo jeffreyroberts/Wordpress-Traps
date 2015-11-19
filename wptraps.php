@@ -33,6 +33,8 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/dashboard.php';
 
 function activate_traps() {
 
+    add_post_meta('1', '_jstraps', '0', true);
+
 }
 
 function deactivate_traps() {
@@ -50,7 +52,7 @@ if ( is_plugin_active( 'wpTraps/wptraps.php' ) ) {
 
     function add_wp_traps()
     {
-        echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/public/js/js-trap.php"></script>';
+        echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/jstrap.php"></script>';
     }
 
     function wptraps_menu()
