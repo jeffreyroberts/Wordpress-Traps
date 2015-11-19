@@ -34,7 +34,14 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/dashboard.php';
 function activate_traps() {
 
     add_post_meta('1', '_jstraps', '0', true);
+    add_post_meta('1', '_visits', '0', true);
+    add_post_meta('1', '_live', '0', true);
 
+}
+
+if(!isset($_COOKIE['wptraps'])) {
+
+    setcookie('wptraps','wptraps',time() + (86400 * 7));
 }
 
 function deactivate_traps() {
@@ -52,11 +59,9 @@ if ( is_plugin_active( 'wpTraps/wptraps.php' ) ) {
 
     function add_wp_traps()
     {
-        if(isset($_COOKIE['wptraps']) == false) {
+        if(!isset($_COOKIE['wptraps'])) {
 
             echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/jstrap.php"></script>';
-
-            setcookie('wptraps','wptraps',time() + (86400 * 7));
         }
     }
 
@@ -86,6 +91,7 @@ if ( is_plugin_active( 'wpTraps/wptraps.php' ) ) {
     run_plugin_name();
 }
 else {
+
     remove_action( 'wptraps_menu' );
     remove_action( 'add_wp_traps' );
 }
