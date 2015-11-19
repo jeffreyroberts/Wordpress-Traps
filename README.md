@@ -1,2 +1,3 @@
 # Wordpress-Traps
-wpTraps
+
+Wordpress Plugin Providing Javascript Bot Trap
