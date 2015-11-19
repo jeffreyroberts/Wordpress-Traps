@@ -19,12 +19,6 @@ class WPTraps_Trap {
             // If JSTrap ->
             //      Decrement JS Miss Counter
 
-        } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
-
-            // If IMGTrap ->
-            //      Decrement IMG Miss Counter
-            // If CSSTrap ->
-            //      Decrement CSS Miss Counter
-        }
+        } 
     }
 }
