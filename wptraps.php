@@ -41,13 +41,6 @@ function activate_traps() {
 
 if(!isset($_COOKIE['wptraps'])) {
 
-    global $wpdb;
-    $post_ID = '1';
-
-    $total_visits = get_post_meta($post_ID, '_visits', true) != '' ? get_post_meta($post_ID, '_visits', true) : '0';
-    $total_visitsNew = $total_visits + 1;
-    update_post_meta($post_ID, '_visits', $total_visitsNew);
-
     setcookie('wptraps','wptraps',time() + (86400 * 7));
 }
 
@@ -67,11 +60,6 @@ if ( is_plugin_active( 'wpTraps/wptraps.php' ) ) {
     function add_wp_traps()
     {
         if(!isset($_COOKIE['wptraps'])) {
-
-            $post_ID = '1';
-            $jstraps = get_post_meta($post_ID, '_jstraps', true) != '' ? get_post_meta($post_ID, '_jstraps', true) : '0';
-            $jstrapsNew = $jstraps + 1;
-            update_post_meta($post_ID, '_jstraps', $jstrapsNew);
 
             echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/jstrap.php"></script>';
         }
