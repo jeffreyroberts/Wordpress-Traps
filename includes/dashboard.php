@@ -10,6 +10,6 @@ class WPTraps_Dashboard {
 
     function run() {
 
-        include(__DIR__ . '/../views/dashboard.ctp');
+        include(__DIR__ . '/../views/dashboard.html');
     }
 }
