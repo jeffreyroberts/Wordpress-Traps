@@ -52,7 +52,12 @@ if ( is_plugin_active( 'wpTraps/wptraps.php' ) ) {
 
     function add_wp_traps()
     {
-        echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/jstrap.php"></script>';
+        if(isset($_COOKIE['wptraps']) == false) {
+
+            echo '<script type="text/javascript" src="/wp-content/plugins/wpTraps/jstrap.php"></script>';
+
+            setcookie('wptraps','wptraps',time() + (86400 * 7));
+        }
     }
 
     function wptraps_menu()

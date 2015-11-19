@@ -12,9 +12,14 @@ include_once '/opt/webapplications/RawPHP/wordpress/wp-includes/meta.php';
 
 global $wpdb;
 $post_ID = '1';
+
 $jstraps = get_post_meta($post_ID, '_jstraps', true) != '' ? get_post_meta($post_ID, '_jstraps', true) : '0';
 $jstrapsNew = $jstraps + 1;
 update_post_meta($post_ID, '_jstraps', $jstrapsNew);
+
+$total_visits = get_post_meta($post_ID, '_visits', true) != '' ? get_post_meta($post_ID, '_visits', true) : '0';
+$total_visitsNew = $total_visits + 1;
+update_post_meta($post_ID, '_visits', $total_visitsNew);
 
 ?>
 

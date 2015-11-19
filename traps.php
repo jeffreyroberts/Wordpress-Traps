@@ -25,10 +25,14 @@ class WPTraps_Trap {
 
             global $wpdb;
             $post_ID = '1';
+
             $jstraps = get_post_meta($post_ID, '_jstraps', true) != '' ? get_post_meta($post_ID, '_jstraps', true) : '0';
             $jstrapsNew = $jstraps - 1;
             update_post_meta($post_ID, '_jstraps', $jstrapsNew);
 
+            $live_humans = get_post_meta($post_ID, '_live', true) != '' ? get_post_meta($post_ID, '_live', true) : '0';
+            $live_humansNew = $live_humans + 1;
+            update_post_meta($post_ID, '_live', $live_humansNew);
         }
     }
 }
