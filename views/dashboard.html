@@ -1,6 +1,6 @@
 <style type="text/css">
 	.wptraps-dashboard {
-		width: 15%;
+		width: 25%;
 		display: inline-block;
 	}
 </style>
@@ -33,18 +33,9 @@
 				<div class="wptraps-dashboard">
 					<center>
 						<br />
-						<h2>Blackholed Bots</h2>
-						<br />
-						<h1>150</h1>
-						<br />
-					</center>
-				</div>
-				<div class="wptraps-dashboard">
-					<center>
-						<br />
 						<h2>Empty JS Traps</h2>
 						<br />
-						<h1>150</h1>
+						<h1><?php echo get_post_meta('1', '_jstraps', true); ?></h1>
 						<br />
 					</center>
 				</div>
